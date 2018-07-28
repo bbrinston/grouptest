@@ -1,0 +1,32 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.navbar-default {
+  /* background-color: #581845; */
+  background-color: #fff;
+  opacity: 0.9;
+  border-bottom: 1.25px solid #E2E2E2;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  color: #13B17F;
+
+}
+
+.nav-link:hover {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(102, 214, 179);
+}
+
+#navbarNav .navbar-nav > li > a:hover {
+
+  text-decoration: none;
+}

@@ -1,0 +1,130 @@
+/*REMOVED 7/15/2018*/
+
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.container {
+  width:95%;
+  margin: 0 auto;
+}
+
+body {
+  background: #EDEDED
+}
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  height: 70px;
+  line-height: 70px;
+  background: #fff;
+  border-bottom: 2px solid #E0E0E0;
+/*E0E0E0#13B17F*/
+}
+
+.logo {
+  width: 200px;
+  float: left;
+
+}
+
+.menu {
+  float: right;
+
+}
+
+.menu li {
+  float: left;
+  width: 120px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  list-style: none;
+}
+
+.menu li a{
+  color: #000;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+}
+
+.menu li:hover{
+  background: #13B17F;
+}
+
+.menu li a:hover{
+  color: #fff
+}
+
+/* sidebar */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    text-align: center;
+    padding: 15px;
+}
+
+.sidebar-header {
+  padding-top: 15px;
+  text-align: center;
+}
+
+#sidebar {
+    position: fixed;
+    background: #fff;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    left: 0;
+    bottom 0;
+}
+
+#sidebar ul li {
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+#sidebar ul li a {
+    padding: 17px;
+    font-size: 1.1em;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+#sidebar ul li a:hover {
+    color: #fff;
+    background: #13B17F;
+    text-decoration: none;
+}
+
+
+#copyright {
+
+    position: fixed;
+    bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    color: #767676;
+    max-width: 250px;
+    padding: 8px;
+    border-top: 1px solid #E0E0E0;
+}

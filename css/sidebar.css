@@ -1,0 +1,142 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+/* sidebar */
+.wrapper {
+  padding-left: 0;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+h6 {
+  padding-top:5px;
+  padding-left: 6px;
+  text-decoration: none;
+  color: #707070;
+}
+
+h5 {
+  color: gray;
+  text-align: center;
+  font-size: 17px;
+
+}
+
+h4 {
+  color: ##13B17F;
+  text-align:center;
+  color: #1A1A1A;
+  font-size: 18px;
+  /*pretty blue: 20D1DF*/
+}
+
+h3 {
+  text-align:center;
+  color: #1A1A1A;
+  font-size: 25px;
+  /*pretty blue: 20D1DF*/
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 7px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.sidenav .buttonClose:hover{
+    background-color: #fff;
+    color:  #4CAF50;
+
+}
+
+
+
+.sidenav {
+    min-height: 100% !important;
+    height: 100% !important;
+
+    width: 250px;
+    float: left;
+    /* z-index: 1; */
+    top: 0;
+    left: 0;
+    background-color: #F9f9f9;
+    /* background: linear-gradient(to bottom right, #222424, #363838); */
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 25px;
+    /* padding-left: 6px; */
+
+    opacity: 0.9;
+}
+
+.sidenav ul li {
+    text-align: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 1.1em;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar ul li:hover {
+    color: #fff;
+    background: #13B17F;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #E0E0E0;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: black;
+    display: block;
+    transition: 0.1s;
+}
+
+
+.sidenav a:hover {
+    color: #fff;
+    background: #13B17F
+}
+
+.btn-custom-del {
+  content: '×';
+}
+
+.btn-custom-go {
+  content: '>';
+}

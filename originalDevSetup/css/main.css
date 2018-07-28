@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: #222222;
+}
+
+.login-screen {
+	background-image: url("../images/cover.png");
+	background-size: cover;
+    background-position: center;
+	background-repeat: no-repeat;
+	
+	min-width: 900px;
+	width: 100%;
+	height: calc(100vh - 56px);
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	
+	font-family: 'Barlow', sans-serif;
+	font-size: 14px;
+}
+
+.dropdown-item {
+	cursor: pointer;
+}
+
+.card {
+	background-color:#F0F0F0;
+	
+	border-radius: 36px 8px 36px 8px;
+	
+   	margin: 0 auto 0px;
+   	margin-top: 0px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	box-shadow: 2px 2px 25px black;
+	
+	max-width: 300px;
+	height: 275px;
+	width: 100% !important;
+}
+
+.cardRegister{
+	background-color:#F0F0F0;
+	
+	border-radius: 36px 8px 36px 8px;
+	
+    	margin: 0 auto 0px;
+    	margin-top: 0px;
+    	
+    	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	box-shadow: 2px 2px 25px black;
+	
+	max-width: 300px;
+	height: 355px;
+	width: 100% !important;
+	
+}
+
+.login-screen h1 {
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+.login-screen input{
+	height: 30px;
+	width: 230px;
+	margin-bottom: 0px;
+	margin-top: 20px;
+	
+	border: 1px solid #8E8E8E;
+	border-radius: 3px;
+	
+	padding: 6px;
+}
+
+.login-screen p{
+	color: #ff0033;
+	text-align: left;
+	padding-left: 35px;
+	margin-bottom: 0px;
+}
+
+.btn-custom {
+	background-color: #222222;
+	color: white;
+	line-height: 1;
+}
+
+.btn-custom:hover {
+	background-color: #1C1C1C;
+	color: #16966A;
+	cursor: pointer;
+}
+
+.login-help {
+	margin-top:10px;
+}
+
+.login-help a{
+	color: #16966A;
+	font-weight: 500;
+}
+
+.blank-entry {
+	flex:1;
+	
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	
+	margin-top: 15px;
+	margin-bottom: 25px;
+	padding: 0px;
+	font-weight: 400;
+	
+	font-size: 20px;
+	color: #A7A7A7;
+}
+

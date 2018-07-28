@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Register | Queue &amp; A</title>
+
+        <!-- BootStrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<!-- Stylesheets -->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/navbar.css" rel="stylesheet" type="text/css">
+	<!-- Fonts  -->
+	 <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+
+	 <!-- Scripts -->
+	 <script src="./scripts/md5.js"></script>
+	 <script src="./scripts/register.js"></script>
+
+  </head>
+
+
+  <body>
+
+	  <!-- NAVBAR  -->
+	 <nav class="navbar navbar-expand-sm navbar-default">
+		<a href="index.html"><img src="images/banner.png" width="275px" height="auto" alt=""></a>
+
+		<ul class="navbar-nav ml-auto">
+		    <li class="nav-item">
+                	<a class="nav-link" href="index.html">Home</a>
+            	    </li>
+		    <li class="nav-item">
+			<a class="nav-link" href="Login.html">Login</a>
+		    </li>
+		    <li class="nav-item active">
+			<a class="nav-link" href="#">Register</a>
+		    </li>
+		</ul>
+	 </nav>
+
+	  <div class="login-screen">
+		<div class="cardRegister">
+			<h1 class="cardTitle">Register</h1>
+			<p name = "response"></p>
+			<form onsubmit="return addProfessor()">
+				<input type="text" id="form-name" placeholder="Full Name" required>
+				<input type="email" id="form-email" placeholder="Email Address" required>
+				<input type="password" id="form-password" placeholder="Password" required>
+				<input type="password" id="form-password-confirm" placeholder="Confirm Password" required>
+                <input type="submit" id="form-submit" value="Register" class="btn-custom" onclick="addProfessor()" required>
+			</form>
+
+			<div class="login-help">
+				<a href="Login.html">Login with an existing account</a><br>
+			</div>
+		</div>
+	  </div>
+
+	  <!-- Error modal -->
+	<div class="modal fade" id="errorModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title">Error</h5>
+					<button type="button" class="close" data-dismiss="modal">
+					  <span>&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="edit-session-form-container">
+						Error message here
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-modal-black" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

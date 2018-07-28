@@ -1,0 +1,205 @@
+<html>
+<!-- NOTES FOR JS -->
+<!-- FUNCTIONS USED: logout()
+  -function name taken directly from prev group
+  -assuming function will close any open sessions? + logout
+  -made it so clicking button performs logout() as well as redirects to index.html
+      -feel free to change
+  -path (past group): scripts/main.js
+  -don't forget to include scripts under 'scripts' section in this html doc -->
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- might remove this -->
+  <title>Queue + A</title>
+
+
+
+  <!-- Bootstrap -->
+  <!--currently shifts navbar to center -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="css/body.css" type="text/css">
+  <link rel="stylesheet" href="css/navbar.css" type="text/css">
+  <link rel="stylesheet" href="css/sidebar.css" type="text/css">
+
+  <!-- Scripts -->
+  <script src = "/scripts/myClasses.js"></script>
+  <script src = "/scripts/main.js"></script>
+
+
+<!-- favicon files -->
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon_files/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_files/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_files/favicon-16x16.png">
+  <link rel="manifest" href="favicon_files/site.webmanifest">
+  <link rel="mask-icon" href="favicon_files/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+<body onload="trimmedClassList()">
+
+
+  <nav class = "navbar fixed-top navbar-expand-sm navbar-default ">
+    <a class="navbar-brand" >
+      <img style="max-height: 35px;" src="images/logo.svg">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" onclick = "logout()">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Sidebar -->
+  <ul class="list-unstyled components">
+
+      <div id="mySidenav" class="sidenav">
+
+              <h6>My Classes</h6>
+                <div class="class-list-container"> <!-- WILL SHOW 'YOU HAVEN'T CREATED ANY CLASSES' IF EMPTY. ELSE: SHOWS CLASS LIST. -->
+                    <!-- NEED TO MAKE IT SO CLASS-LIST-CONTAINER ONLY SHOWS 3 MOST RECENT CLASSES -->
+ 	               </div>
+              </br>
+              <li>
+                  <a href="#" data-toggle="modal" data-target="#newClassModal">Add New Class</a>
+              </li>
+      </div>
+  </ul>
+
+
+<div id="main">
+  <div class = "welcome">
+
+      <h1>Welcome!</h1>
+      <h2>Click below to add</br>a class, or view your</br>current classes using</br>the sidebar.</h2>
+      <button type = "button" class = "newClass" data-toggle="modal" data-target="#newClassModal">&#43; New Class </button>
+
+
+  </div>
+</div>
+
+
+  <!-- New class modal -->
+		<div class="modal fade" id="newClassModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h5 class="modal-title">Create a new class</h5>
+						<button type="button" class="close" data-dismiss="modal">
+						  <span>&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="add-class-form-container">
+							<input id="add-class-input" type="text" placeholder="Class Name">
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-modal-black" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-modal-green" data-dismiss="modal" onclick="addClass()">Create</button> <!-- NEEDS TO REDIRECT TO OPEN CLASS PAGE -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		  <!-- Delete class modal -->
+		<div class="modal fade" id="deleteClassModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h5 class="modal-title">Are you sure?</h5>
+						<button type="button" class="close" data-dismiss="modal" onclick="setDeleteTarget(-1, '')">
+						  <span>&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="edit-class-form-container">
+							Are you sure you want to delete "Class name"? You won't ever be able to access it again.
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-modal-black" data-dismiss="modal" onclick="setDeleteTarget(-1, '')">No</button>
+						<button type="button" class="btn btn-modal-green" data-dismiss="modal" onclick="deleteClass()">Yes</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	  	<!-- Error modal -->
+		<div class="modal fade" id="errorModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h5 class="modal-title">Error</h5>
+						<button type="button" class="close" data-dismiss="modal">
+						  <span>&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="edit-session-form-container" id="errorText">
+							Error message here
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-modal-black" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+    <footer>
+      &copy; 2018 Queue + A. All Rights Reserved.
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+/* CSS Document */
+
+/*Links in the navbar */
+.navbar-default .navbar-nav > li > a {
+	color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color: #13B17F;
+}
+
+.navbar-default .navbar-nav > li:hover {
+		/* background: #13B17F; /* green */ */
+
+}
+
+.navbar-default .navbar-nav > li {
+	margin-right: 10px;
+}
+
+
+/* .navbar-default .navbar-nav .active a{
+	color: #16966A;
+	background-color: #0D0D0D;
+} */
+
+.navbar-default {
+	border-radius: 0px;
+    background-color: #fff;
+		/* #EDEDED; THIS IS GREY */
+
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding-left: 20px;
+	padding-right: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	border: none;
+	box-shadow: 0px 2px 5px black;
+
+	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Barlow', sans-serif; */
+	font-size: 17px;
+}

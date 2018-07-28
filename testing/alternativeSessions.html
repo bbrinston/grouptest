@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- might remove this -->
+    <title>Queue + A</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Javascripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- favicon files -->
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon_files/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_files/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_files/favicon-16x16.png">
+    <link rel="manifest" href="favicon_files/site.webmanifest">
+    <link rel="mask-icon" href="favicon_files/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+<style>
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 56px;
+}
+.wrapper {
+    padding-left: 0;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    text-align: center;
+    padding: 15px;
+}
+h6 {
+  padding-top:5px;
+  text-decoration: none;
+  color: #b5b5b5;
+}
+h5 {
+  color: #b5b5b5;
+  text-align: center;
+  font-size: 17px;
+}
+h4 {
+  color: #13B17F;
+  text-align:center;
+  color: #1A1A1A;
+  font-size: 18px;
+  /*pretty blue: 20D1DF*/
+}
+h3 {
+  text-align:center;
+  color: #1A1A1A;
+  font-size: 25px;
+  /*pretty blue: 20D1DF*/
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 56px;
+}
+.sidenav ul li {
+    text-align: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 1.1em;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.sidebar ul li:hover {
+    color: #fff;
+    background: #13B17F;
+    border-bottom: 1px solid #E0E0E0;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #E0E0E0;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: black;
+    display: block;
+    transition: 0.1s;
+}
+.sidenav a:hover {
+    color: #fff;
+    background: #13B17F
+}
+.sidenav temp {
+    padding: 8px 8px 8px 32px;
+    padding-top: 16px;
+    padding-bottom: 7px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: black;
+    display: block;
+    transition: 0.1s;
+}
+.sidenav temp:hover {
+    color: #fff;
+    background: #13B17F
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 600px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav .buttonClose {
+    background-color: #4CAF50; /* Green */
+    border-bottom: 1px solid #E0E0E0;
+    border-top: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.sidenav .buttonClose:hover{
+    background-color: #fff;
+    color:  #4CAF50;
+    
+}
+.navbar-default {
+  background-color: #fff;
+}
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  color: #13B17F;
+}
+.nav-link:hover {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(102, 214, 179);
+}
+#navbarNav .navbar-nav > li > a:hover {
+  background-color: #fff;
+  text-decoration: none;
+}
+#main {
+    transition: margin-left .2s;
+    padding: 16px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 7px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+    <ul class="list-unstyled components">
+        <div id="mySidenav" class="sidenav">
+        <temp href="#"><h6>Back to Classes</h6></temp>
+        <h4>COP 4331</h4>
+        <h5>id: 549831 </h5>
+        <li>              
+            <a href="#">Session 1</a>
+        </li>
+        <li>
+            <a href="#">Session 1</a>
+        </li>
+        <li>
+            <a href="#">Session 1</a>
+        </li>
+        <li>  
+            <a href="#">View All</a>
+        </li>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#myModal">New Session</a>
+            
+        </li>
+        <a href="javascript:void(0)" class="buttonClose" onclick="closeNav()">&times;</a>
+        </div>
+    </ul>
+
+
+
+<nav class = "navbar fixed-top navbar-expand-sm navbar-default ">
+        <a class="navbar-brand" >
+          <img style="max-height: 35px;" src="logo.svg">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" onclick = "logout()">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<div id="main">
+  <h2>Sidenav Push Example</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  <div class="container">
+    <h2>Fading Modal</h2>
+    <p>Add the "fade" class to the modal container if you want the modal to fade in on open and fade out on close.</p>
+    
+    <!-- Button to Open the Modal -->
+        <!-- Is located in the sidenav bar-->
+      
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            
+        <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">New Session</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+              
+        <!-- Modal body -->
+          <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Name</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+              </form>
+          </div>
+              
+        <!-- Modal footer -->
+          <div class="modal-footer text-center">
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Done</button>
+          </div>
+              
+        </div>
+      </div>
+    </div>
+        
+  </div>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+     
+</body>
+</html> 

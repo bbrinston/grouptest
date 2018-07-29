@@ -1,0 +1,151 @@
+.btn-menu {
+	width: 20px;
+	height: 20px;
+
+	padding: 0px;
+	margin-top: 0px;
+
+	cursor: pointer;
+	background-color: white;
+	background-image: url(../images/menu.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+	border: none;
+
+
+}
+
+.btn-menu:hover, .btn-menu:active, .btn-menu:focus {
+	background-image: url(../images/menuHover.png);
+}
+
+.btn-add {
+	height: 22px;
+	width: 22px;
+
+	cursor: pointer;
+
+	background-color: white;
+	border: none;
+
+	margin-top: 3px;
+	margin-left: 10px;
+	line-height: 30px;
+
+	background-image: url(../images/plus.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+.btn-add:hover, .btn-add:focus {
+	background-image: url(../images/plusHover.png);
+}
+.btn-custom {
+	background: #222222 url("../images/login.png") no-repeat;
+	background-size: 50px 50px;
+	background-position: center;
+
+	box-shadow: 3px 3px 2px #080808;
+	border-radius: 20px;
+	border: none;
+	height: 80px;
+	width: 80px;
+	float: right;
+	margin-top: 17px;
+}
+
+.btn-custom:hover {
+	background-color: #010101;
+}
+
+.btn-custom:active {
+	background-color: #010101;
+	box-shadow: none;
+	transform: translate3d(3px,3px,0px);
+}
+
+
+.btn-deleteClass {
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
+
+	border:none;
+	background-image: url(../images/deleteClass.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #FFFFFF;
+}
+
+.btn-deleteClass:hover, .btn-deleteClass:active {
+	background-image: url(../images/deleteClassHover.png);
+}
+
+
+button:focus {outline:0 !important;}
+
+.btn-session {
+	cursor: pointer;
+	height: 25px;
+	width: 150px;
+	margin-bottom: 0px;
+	margin-right: 17px;
+
+
+	background-color: #222222;
+	border: none;
+	border-radius: 0px;
+
+	box-shadow: 3px 3px 2px #080808;
+
+	color: white;
+	font-size: 15px;
+	line-height: 25px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.btn-new-session {
+	height: 25px;
+	width: 25px;
+
+	cursor: pointer;
+
+	background-color: white;
+	border: none;
+
+	margin-top: 8px;
+	margin-left: 10px;
+	line-height: 30px;
+
+	background-image: url(../images/plus.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.btn-new-session:hover, .btn-new-session:focus {
+	background-image: url(../images/plusHover.png);
+}
+
+.btn-delete {
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+
+	margin-left: 10px;
+	margin-top: 0px;
+
+	border:none;
+	background-image: url(../images/deleteClass.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: white;
+}
+
+.btn-delete:hover, .btn-delete:active {
+	background-image: url(../images/deleteClassHover.png);
+}

@@ -1,11 +1,10 @@
-<?php
+<?php 
 
-ini_set('display_errors', 'On');
-
-define ("DB_NAME", "database46");
-define ("DB_USERNAME", "database46");
-define ("DB_PASSWORD", "pass123?");
-define ("DB_HOST", "den1.mysql4.gear.host");
-
+$serverName = "den1.mysql4.gear.host"; //serverName\instanceName 
+$connectionInfo = array( "Database"=>"database46", "UID"=>"database46", "PWD"=>"pass123?"); 
+$conn = sqlsrv_connect( $serverName, $connectionInfo); 
+if( $conn ) { echo "Connection established.
+"; }else{ echo "Connection could not be established.
+"; die( print_r( sqlsrv_errors(), true)); } 
 
 ?>
